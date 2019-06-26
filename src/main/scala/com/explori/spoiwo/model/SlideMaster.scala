@@ -1,5 +1,9 @@
 package com.explori.spoiwo.model
 
-class SlideMaster {
+object SlideMaster {
+  
+}
+
+case class SlideMaster private () {
   
 }

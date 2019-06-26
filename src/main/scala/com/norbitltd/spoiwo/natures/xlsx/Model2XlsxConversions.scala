@@ -283,6 +283,7 @@ object Model2XlsxConversions extends BaseXlsx {
     evictFromCache(workbook)
     workbook
   }
+  
   private def evictFromCache(wb: XSSFWorkbook) {
     cellStyleCache.remove(wb)
     dataFormatCache.remove(wb)

@@ -1,5 +1,9 @@
 package com.explori.spoiwo.model
 
-class Chart {
+object Chart {
+  
+}
+
+case class Chart private () {
   
 }

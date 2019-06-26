@@ -1,5 +1,9 @@
 package com.explori.spoiwo.model
 
-class Background {
+object Background {
+  
+}
+
+case class Background private () {
   
 }
