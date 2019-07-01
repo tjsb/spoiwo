@@ -4,22 +4,21 @@ object Slide {
   
   val Blank = Slide()
   
-  def apply(title: String = null, 
+  def apply(content: Iterable[SlideContent] = Iterable.empty, 
             layout: SlideLayout = null): Slide = 
-              Slide(title = Option(title), 
-                    layout = Option(layout),
-                    charts = Nil
+              Slide(content = content, 
+                    layout = Option(layout)
                     )
   
-  def apply(layout: SlideLayout): Slide = Slide(layout)
+  def apply(content: SlideContent*): Slide = Slide(content = content)
   
 }
 
-case class Slide private (title: Option[String], layout: Option[SlideLayout], charts: Iterable[Chart]) {
+case class Slide private (content: Iterable[SlideContent], layout: Option[SlideLayout]) {
   
   def withSlideLayout(layout: SlideLayout): Slide =
     copy(layout = Option(layout))
     
-  def withSlideTitle(title: String): Slide =
-    copy(title = Option(title))
+  def withSlideContent(content: Iterable[SlideContent]): Slide =
+    copy(content = content)
 }

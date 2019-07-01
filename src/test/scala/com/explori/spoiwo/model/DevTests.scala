@@ -2,6 +2,7 @@ package com.explori.spoiwo.model
 
 import org.scalatest.{FunSuite, Matchers}
 
+import chart._
 import com.explori.spoiwo.natures.pptx.Model2PptxConversions._
 
 class DevTests extends FunSuite with Matchers {
@@ -21,12 +22,32 @@ class DevTests extends FunSuite with Matchers {
     
     val ss = SlideShow(
       Slide(
-            title = "Slide 1",
-            layout = SlideLayout(typ = enums.SlideLayout.Blank)
-          ),
-      Slide(
-            title = "Slide 2",
-            layout = SlideLayout(typ = enums.SlideLayout.TitleAndContent)
+            Chart(
+              title = "Test Chart",
+              data = Seq(
+                  BarChartData(
+                    categoryAxis = CategoryAxis(
+                                    title = "Languages", 
+                                    values = Seq("English", "Russian", "Spanish")
+                                    ),
+                    valueAxes = Seq(
+                        ValueAxis(
+                            title = "Countries,speakers", 
+                            data = Seq(
+                                SeriesData(
+                                    category = "countries", 
+                                    values = List(13.00, 21.00, 7.00)
+                                ),
+                                SeriesData(
+                                    category = "speakers", 
+                                    values = List(23.00, 19.00, 46.00)
+                                )
+                           )
+                       )
+                     )
+                  )
+                )
+            )
           ) 
     )
     ss.saveAsPptx("/home/tom/Desktop/workbook.pptx")
