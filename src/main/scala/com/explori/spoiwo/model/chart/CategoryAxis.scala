@@ -5,7 +5,7 @@ object CategoryAxis {
 }
 
 case class CategoryAxis(
-    title: String,
+    legend: String,
     values: Seq[String],
     position: enums.AxisPosition = enums.AxisPosition.Bottom,
     orientation: enums.AxisOrientation = enums.AxisOrientation.MinMax,

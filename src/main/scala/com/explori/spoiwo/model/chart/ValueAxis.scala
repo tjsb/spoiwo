@@ -5,7 +5,7 @@ object ValueAxis {
 }
 
 case class ValueAxis(
-    title: String,
+    legend: String,
     data: Seq[SeriesData],
     position: enums.AxisPosition = enums.AxisPosition.Left,
     orientation: enums.AxisOrientation = enums.AxisOrientation.MinMax,

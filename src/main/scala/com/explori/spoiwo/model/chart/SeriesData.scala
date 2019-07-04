@@ -4,6 +4,6 @@ object SeriesData {
   
 }
 
-case class SeriesData(category: String, values: List[Double]) {
+case class SeriesData(category: String, values: Seq[Double]) {
   
 }

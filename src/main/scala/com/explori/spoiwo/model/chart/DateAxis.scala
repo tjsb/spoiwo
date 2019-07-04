@@ -5,7 +5,7 @@ object DateAxis {
 }
 
 case class DateAxis(
-    title: String,
+    legend: String,
     position: enums.AxisPosition,
     orientation: enums.AxisOrientation,
     crosses: enums.AxisCrosses = enums.AxisCrosses.AutoZero,

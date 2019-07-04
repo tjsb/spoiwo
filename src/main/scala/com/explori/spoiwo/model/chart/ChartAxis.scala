@@ -3,7 +3,7 @@ package com.explori.spoiwo.model.chart
 trait ChartAxis {
   
   val position: enums.AxisPosition
-  val title: String
+  val legend: String
   val majorUnit: Option[Double]
   val minorUnit: Option[Double]
   val maximum: Option[Double]
